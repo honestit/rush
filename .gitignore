@@ -1,0 +1,24 @@
+### Gradle ###
+.gradle
+build/
+
+### Java ###
+*.class
+
+### Package Files ###
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+### Other ###
+# vscode config files
+.vscode/
+# Log files
+*.log
+
+# Avoid ignoring Gradle wrapper jar file
+!gradle-wrapper.jar

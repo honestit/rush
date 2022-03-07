@@ -1,0 +1,8 @@
+plugins {
+    id 'rush.java-library-conventions'
+}
+
+dependencies {
+  implementation project(':model')
+  implementation project(':services')
+}
