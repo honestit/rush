@@ -1,0 +1,167 @@
+syntax = "proto3";
+
+package rush.service;
+
+option java_package = "com.rush.service";
+
+service RushService {
+  rpc CreateList(CreateListRequest) returns (CreateListResponse);
+  rpc AddProductToList(AddProductToListRequest) returns (AddProductToListResponse);
+  rpc RemoveProductFromList(RemoveProductFromListRequest) returns (RemoveProductFromListResponse);
+
+  rpc SearchProduct(CreateListRequest) returns (CreateListResponse);
+  rpc FillInfoAboutProduct(CreateListRequest) returns (CreateListResponse);
+  rpc FillInfoAboutProductBasedOnList(FillInfoAboutProductBasedOnListRequest) returns (FillInfoAboutProductBasedOnListResponse);
+  rpc FillListWithSuggestedProducts(FillListWithSuggestedProductsRequest) returns (FillListWithSuggestedProductsResponse);
+
+  rpc ShareList(ShareListRequest) returns (ShareListResponse);
+  rpc ShareInfoAboutProductsInList(ShareInfoAboutProductsInListRequest) returns (ShareInfoAboutProductsInListResponse);
+  rpc UpdateInfoAboutProductUsage(UpdateInfoAboutProductUsageRequest) returns (UpdateInfoAboutProductUsageResponse);
+
+  rpc AcceptListUpdateBasedOnPreviousProductUsage(AcceptListUpdateBasedOnPreviousProductUsageRequest) returns (AcceptListUpdateBasedOnPreviousProductUsageResponse);
+  rpc AddPlaceOfRealisationToList(AddPlaceOfRealisationToListRequest) returns (AddPlaceOfRealisationToListResponse);
+  rpc ReorganizeListBasedOnCategory(ReorganizeListBasedOnCategoryRequest) returns (ReorganizeListBasedOnCategoryResponse);
+  rpc ReorganizeListBasedOnPlace(ReorganizeListBasedOnPlaceRequest) returns (ReorganizeListBasedOnPlaceResponse);
+
+  rpc GetSpecialOfferForPlace(GetSpecialOfferForPlaceRequest) returns (GetSpecialOfferForPlaceResponse);
+  rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse);
+  rpc CreateGroup(CreateGroupRequest) returns (CreateGroupResponse);
+
+
+}
+
+message CreateListRequest {
+  string message = 1;
+}
+
+message CreateListResponse {
+  string message = 1;
+}
+
+message AddProductToListRequest {
+  string message = 1;
+}
+
+message AddProductToListResponse {
+  string message = 1;
+}
+
+message RemoveProductFromListRequest {
+  string message = 1;
+}
+
+message RemoveProductFromListResponse {
+  string message = 1;
+}
+
+message SearchProductRequest {
+  string message = 1;
+}
+
+message SearchProductResponse {
+  string message = 1;
+}
+
+message FillInfoAboutProductRequest {
+  string message = 1;
+}
+
+message FillInfoAboutProductResponse {
+  string message = 1;
+}
+
+message FillInfoAboutProductBasedOnListRequest {
+  string message = 1;
+}
+
+message FillInfoAboutProductBasedOnListResponse {
+  string message = 1;
+}
+
+message FillListWithSuggestedProductsRequest {
+  string message = 1;
+}
+
+message FillListWithSuggestedProductsResponse {
+  string message = 1;
+}
+
+message ShareListRequest {
+  string message = 1;
+}
+
+message ShareListResponse {
+  string message = 1;
+}
+
+message ShareInfoAboutProductsInListRequest {
+  string message = 1;
+}
+
+message ShareInfoAboutProductsInListResponse {
+  string message = 1;
+}
+
+message UpdateInfoAboutProductUsageRequest {
+  string message = 1;
+}
+
+message UpdateInfoAboutProductUsageResponse {
+  string message = 1;
+}
+
+message AcceptListUpdateBasedOnPreviousProductUsageRequest {
+  string message = 1;
+}
+
+message AcceptListUpdateBasedOnPreviousProductUsageResponse {
+  string message = 1;
+}
+
+message AddPlaceOfRealisationToListRequest {
+  string message = 1;
+}
+
+message AddPlaceOfRealisationToListResponse {
+  string message = 1;
+}
+
+message ReorganizeListBasedOnCategoryRequest {
+  string message = 1;
+}
+
+message ReorganizeListBasedOnCategoryResponse {
+  string message = 1;
+}
+
+message ReorganizeListBasedOnPlaceRequest {
+  string message = 1;
+}
+
+message ReorganizeListBasedOnPlaceResponse {
+  string message = 1;
+}
+
+message GetSpecialOfferForPlaceRequest {
+  string message = 1;
+}
+
+message GetSpecialOfferForPlaceResponse {
+  string message = 1;
+}
+
+message CreateAccountRequest {
+  string message = 1;
+}
+
+message CreateAccountResponse {
+  string message = 1;
+}
+
+message CreateGroupRequest {
+  string message = 1;
+}
+
+message CreateGroupResponse {
+  string message = 1;
+}
