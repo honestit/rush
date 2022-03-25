@@ -1,5 +1,5 @@
 plugins {
-    id 'groovy-gradle-plugin'
+    id 'rush.java-library-conventions'
     id 'com.google.protobuf' version "0.8.18"
     id 'java'
 }
