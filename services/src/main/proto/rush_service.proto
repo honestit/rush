@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package rush.service;
+
+import "lala.proto";
+
+service RushService {
+  rpc CreateList(CreateListRequest) returns (CreateListResponse);
+  rpc doSomething(lala.HelloRequest) returns (lala.HelloResponse);
+}
+
+message CreateListRequest {
+  string message = 1;
+}
+
+message CreateListResponse {
+  string message = 1;
+}
