@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package lala;
+
 message HelloRequest {
   string text = 1;
 }
