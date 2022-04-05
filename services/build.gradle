@@ -36,6 +36,7 @@ protobuf {
     }
 }
 
+// For IDE to support generated file in code source, https://youtrack.jetbrains.com/issue/IDEA-209418
 sourceSets {
     main {
         java {
