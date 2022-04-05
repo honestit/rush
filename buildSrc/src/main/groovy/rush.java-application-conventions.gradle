@@ -1,5 +1,4 @@
 plugins {
-    id 'rush.java-common-conventions' 
-    
+    id 'rush.java-common-conventions'
     id 'application' 
 }
