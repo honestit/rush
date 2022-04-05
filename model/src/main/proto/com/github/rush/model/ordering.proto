@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package com.github.rush.model;
+
+option java_multiple_files = true;
+option java_package = "com.github.rush.model.ordering";
+option java_outer_classname = "OrderingApi";
+
+import "com/github/rush/model/shopping.proto";
+
+// Represents grouped records of shopping items.
+message Group {
+  // Name of this group of records.
+  string name = 1;
+
+  // List of available shops to collect all records from the group.
+  repeated Shop shop = 2;
+
+  // List of records with ordered shopping items.
+  repeated Record records = 3;
+
+  // NextId = 4;
+}
+
+// Represents association between the shopping item and its position withing the group.
+message Record {
+  // Position of specified shopping item in its group.
+  int32 position = 1;
+
+  // Shopping item.
+  com.github.rush.model.ShoppingItem shopping_item = 2;
+
+  // NextId = 2
+}
+
+// Represents shop abstraction.
+message Shop {
+  // Unique identifier.
+  string id = 1;
+
+  // Mon unique, human readable name.
+  string name = 2;
+
+  // Address as single line in any format.
+  string address = 3;
+
+  // NextId = 4;
+}
