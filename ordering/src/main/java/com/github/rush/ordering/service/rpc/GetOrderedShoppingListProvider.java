@@ -1,7 +1,9 @@
 package com.github.rush.ordering.service.rpc;
 
-import org.springframework.stereotype.Service;
+import com.github.rush.services.ordering.GetOrderedShoppingListRequest;
+import com.github.rush.services.ordering.GetOrderedShoppingListResponse;
 
-@Service
-public class GetOrderedShoppingListProvider {
+public interface GetOrderedShoppingListProvider {
+
+    GetOrderedShoppingListResponse getOrderedShoppingList(GetOrderedShoppingListRequest request);
 }
