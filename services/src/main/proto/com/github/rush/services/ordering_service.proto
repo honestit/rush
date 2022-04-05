@@ -20,7 +20,7 @@ message GetOrderedShoppingListRequest {
   string user_id = 1;
 
   // Shopping list to be ordered.
-  com.github.rush.model.ShoppingList shopping_list = 2;
+  com.github.rush.model.shopping.ShoppingList shopping_list = 2;
 
   // NextId = 3;
 }
@@ -28,7 +28,7 @@ message GetOrderedShoppingListRequest {
 message GetOrderedShoppingListResponse {
   // Groups of ordered records.
   // Each group is based on items categories or/and shop to collect them from.
-  repeated com.github.rush.model.Group groups = 1;
+  repeated com.github.rush.model.ordering.Group groups = 1;
 
   // NextId = 2;
 }

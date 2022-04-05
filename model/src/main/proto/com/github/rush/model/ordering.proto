@@ -1,9 +1,10 @@
 syntax = "proto3";
 
-package com.github.rush.model;
+package com.github.rush.model.ordering;
 
 option java_multiple_files = true;
 option java_package = "com.github.rush.model.ordering";
+// All messages available through outer class, ex. OrderingApi.Group.
 option java_outer_classname = "OrderingApi";
 
 import "com/github/rush/model/shopping.proto";
@@ -28,7 +29,7 @@ message Record {
   int32 position = 1;
 
   // Shopping item.
-  com.github.rush.model.ShoppingItem shopping_item = 2;
+  com.github.rush.model.shopping.ShoppingItem shopping_item = 2;
 
   // NextId = 2
 }
