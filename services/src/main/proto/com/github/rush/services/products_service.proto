@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package com.github.rush.services.products;
+
+option java_multiple_files = true;
+option java_package = "com.github.rush.services.products";
+
+// Service providing rpcs to find product.
+service ProductsService {
+  rpc FindProduct(ProductRequest) returns (ProductResponse);
+}
+
+message ProductRequest {
+  int32 id = 1;
+  string name = 2;
+
+  // NextId = 3;
+}
+
+message ProductResponse {
+  string text = 1;
+  string name = 2;
+  repeated string aliases = 3;
+  repeated string categories = 4;
+  map<int32, string> attributes = 5;
+
+  // NextId = 6;
+}
