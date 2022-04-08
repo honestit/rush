@@ -1,0 +1,13 @@
+plugins {
+    id 'rush.java-library-conventions'
+    id 'com.google.protobuf'
+}
+
+dependencies {
+    implementation libs.bundles.grpc
+    api libs.protobuf.java.util
+}
+
+bootJar {
+    enabled = false
+}

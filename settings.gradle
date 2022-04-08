@@ -1,18 +1,36 @@
 rootProject.name = 'rush'
+
 include('model', 'services', 'shopping', 'products', 'ordering', 'zero-waste', 'accounts', 'qa')
 
 dependencyResolutionManagement {
     versionCatalogs {
         libs {
-            version('junit', '5.8.2')
-            version('junit-platform', '1.8.2')
-            
-            library('junit-jupiter', 'org.junit.jupiter','junit-jupiter').versionRef('junit')
-            library('junit-jupiter-engine', 'org.junit.jupiter','junit-jupiter-engine').versionRef('junit')
-            library('junit-vintage-engine', 'org.junit.vintage','junit-vintage-engine').versionRef('junit')
-            library('junit-platform-launcher', 'org.junit.platform','junit-platform-launcher').versionRef('junit-platform')
+            // Versions
+            version('grpc', '1.42.2')
+            version('protobuf', '3.19.3')
+            version('spring-boot-starter-grpc', '2.13.1.RELEASE')
 
+            // Libraries
+            // junit
+            library('junit-jupiter', 'org.junit.jupiter', 'junit-jupiter').withoutVersion()
+            library('junit-jupiter-engine', 'org.junit.jupiter', 'junit-jupiter-engine').withoutVersion()
+            library('junit-vintage-engine', 'org.junit.vintage', 'junit-vintage-engine').withoutVersion()
+            library('junit-platform-launcher', 'org.junit.platform', 'junit-platform-launcher').withoutVersion()
+            // grpc
+            library('grpc-netty', 'io.grpc', 'grpc-netty').versionRef('grpc')
+            library('grpc-protobuf', 'io.grpc', 'grpc-protobuf').versionRef('grpc')
+            library('grpc-stub', 'io.grpc', 'grpc-stub').versionRef('grpc')
+            // protobuf
+            library('protobuf-java-util', 'com.google.protobuf', 'protobuf-java-util').versionRef('protobuf')
+            // spring
+            library('spring-boot-starter', 'org.springframework.boot', 'spring-boot-starter').withoutVersion()
+            library('spring-boot-starter-grpc', 'net.devh', 'grpc-server-spring-boot-starter').versionRef('spring-boot-starter-grpc')
+            library('spring-boot-starter-test', 'org.springframework.boot', 'spring-boot-starter-test').withoutVersion()
+
+
+            // Bundles
             bundle('junit-runtime', ['junit-jupiter-engine','junit-vintage-engine','junit-platform-launcher'])
+            bundle('grpc', ['grpc-netty','grpc-protobuf','grpc-stub'])
         }
     }
 }
