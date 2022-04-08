@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package com.github.rush.model.shopping;
+
+option java_multiple_files = true;
+option java_package = "com.github.rush.model.shopping";
+option java_outer_classname = "ShoppingApi";
+
+// Represents single shopping item. Temporary message to be replace with valid one.
+message ShoppingItem {
+  // Name of this shopping item.
+  string name = 1;
+
+  // Quantity of this shopping item.
+  int32 quantity = 2;
+
+  // Measurement values
+  enum Measurement {
+    // Pieces of item.
+    PIECES = 0;
+
+    // Kilos of item.
+    KILOS = 1;
+
+    // Meters of item.
+    METERS = 2;
+
+    // Liters of item.
+    LITERS = 3;
+  }
+
+  // Measurement of this shopping item.
+  Measurement measurement = 3;
+
+  // NextId = 4;
+}
+
+// Represents shipping list. Temporary message to be replace with valid one.
+message ShoppingList {
+  // Name of the shopping list.
+  string name = 1;
+
+  // Owner id of the shopping list.
+  int64 owner_id = 2;
+
+  // Items in this shopping list.
+  repeated ShoppingItem shopping_items = 3;
+
+  // NextId = 4;
+}

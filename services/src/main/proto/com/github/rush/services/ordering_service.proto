@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package com.github.rush.services.shopping;
+
+option java_multiple_files = true;
+option java_package = "com.github.rush.services.ordering";
+
+import "com/github/rush/model/ordering.proto";
+import "com/github/rush/model/shopping.proto";
+
+// Service providing rpcs to order/sort shopping list.
+service OrderingService {
+
+  rpc GetOrderedShoppingList(GetOrderedShoppingListRequest) returns (GetOrderedShoppingListResponse);
+
+}
+
+message GetOrderedShoppingListRequest {
+  // Id of user requesting ordering.
+  string user_id = 1;
+
+  // Shopping list to be ordered.
+  com.github.rush.model.shopping.ShoppingList shopping_list = 2;
+
+  // NextId = 3;
+}
+
+message GetOrderedShoppingListResponse {
+  // Groups of ordered records.
+  // Each group is based on items categories or/and shop to collect them from.
+  repeated com.github.rush.model.ordering.Group groups = 1;
+
+  // NextId = 2;
+}

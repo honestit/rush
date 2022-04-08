@@ -1,6 +1,5 @@
 plugins {
-    id 'rush.java-common-conventions' 
-
+    id 'rush.java-common-conventions'
     id 'java-library' 
 }
 
