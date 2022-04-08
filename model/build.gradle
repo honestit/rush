@@ -1,31 +1,15 @@
 plugins {
-    id 'rush.java-library-conventions'
-    id 'com.google.protobuf' version "0.8.18"
-    id 'java'
-}
-
-repositories {
-    gradlePluginPortal()
-}
-
-def grpcVersion = '1.44.1'
-
-dependencies {
-    implementation "io.grpc:grpc-netty:${grpcVersion}"
-    implementation "io.grpc:grpc-protobuf:${grpcVersion}"
-    implementation "io.grpc:grpc-stub:${grpcVersion}"
-    api group: 'com.google.protobuf', name: 'protobuf-java-util', version: '3.12.2'
-    implementation group: "javax.annotation", name: "javax.annotation-api", version: "1.3.2"
+    id 'rush.java-proto-conventions'
 }
 
 protobuf {
     protoc {
-        artifact = 'com.google.protobuf:protoc:3.12.2'
+        artifact = "com.google.protobuf:protoc:${libs.versions.protobuf.get()}"
     }
 
     plugins {
         grpc {
-            artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}"
+            artifact = "io.grpc:protoc-gen-grpc-java:${libs.versions.grpc.get()}"
         }
     }
     generateProtoTasks {

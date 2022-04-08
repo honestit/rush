@@ -3,3 +3,6 @@ plugins {
     id 'java-library' 
 }
 
+bootJar {
+    enabled = false
+}
