@@ -11,11 +11,11 @@ import "com/github/rush/model/shopping.proto";
 // Service providing rpcs to get zero waste suggestions.
 service ZeroWasteService {
 
-  rpc GetSugestions(GetSugestionsRequest) returns (GetSugestionsResponse);
+  rpc GetSuggestions(GetSuggestionsRequest) returns (GetSuggestionsResponse);
 
 }
 
-message GetSugestionsRequest {
+message GetSuggestionsRequest {
   // Id of user requesting suggestions.
   string user_id = 1;
 
@@ -25,7 +25,7 @@ message GetSugestionsRequest {
   // NextId = 3;
 }
 
-message GetSugestionsResponse {
+message GetSuggestionsResponse {
 
   // Optimization suggestions.
   com.github.rush.model.zerowaste.ChangeSuggestions suggestions = 1;
