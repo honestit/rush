@@ -2,23 +2,6 @@ plugins {
     id 'rush.java-proto-conventions'
 }
 
-protobuf {
-    protoc {
-        artifact = "com.google.protobuf:protoc:${libs.versions.protobuf.get()}"
-    }
-
-    plugins {
-        grpc {
-            artifact = "io.grpc:protoc-gen-grpc-java:${libs.versions.grpc.get()}"
-        }
-    }
-    generateProtoTasks {
-        all()*.plugins {
-            grpc {}
-        }
-    }
-}
-
 // For IDE to support generated file in code source, https://youtrack.jetbrains.com/issue/IDEA-209418
 sourceSets {
     main {
