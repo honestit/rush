@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package com.github.rush.services.shopping;
+
+option java_multiple_files = true;
+option java_package = "com.github.rush.services.shopping";
+
+// Service providing rpcs to order/sort shopping list.
+service ShoppingListService {
+
+  rpc CreateShoppingList(CreateShoppingListRequest)
+      returns (CreateShoppingListResponse);
+}
+
+message CreateShoppingListRequest {
+  // Id of user requesting list creation.
+  int64 user_id = 1;
+
+  // NextId = 2;
+}
+
+message CreateShoppingListResponse {
+  // ID of created list.
+  int64 list_id = 1;
+
+  // NextId = 2;
+}
