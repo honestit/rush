@@ -17,6 +17,8 @@ service ShoppingListService {
 
   rpc UpdateShoppingList(UpdateShoppingListRequest)
       returns (UpdateShoppingLisResponse);
+
+  rpc GetShoppingList(GetShoppingListRequest) returns (GetShoppingListResponse);
 }
 
 message CreateShoppingListRequest {
@@ -56,3 +58,12 @@ message UpdateShoppingListRequest {
 }
 
 message UpdateShoppingLisResponse {}
+
+message GetShoppingListRequest {
+    // Id of shopinng list.
+    int64 list_id = 1;
+}
+
+message GetShoppingListResponse {
+  com.github.rush.model.shopping.ShoppingList shopping_list = 1;
+}
