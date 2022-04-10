@@ -4,8 +4,8 @@ package com.github.rush.model.zerowaste;
 
 option java_multiple_files = true;
 option java_package = "com.github.rush.model.zerowaste";
-// All messages available through outer class, ex. ZeroWastegApi.Suggestion.
-option java_outer_classname = "ZeroWastegApi";
+// All messages available through outer class, ex. ZeroWasteApi.Suggestion.
+option java_outer_classname = "ZeroWasteApi";
 
 // Represents grouped records of ChangeSuggestion.
 message ChangeSuggestions {

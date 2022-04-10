@@ -6,16 +6,19 @@ option java_multiple_files = true;
 option java_package = "com.github.rush.model.shopping";
 option java_outer_classname = "ShoppingApi";
 
-// Represents single shopping item. Temporary message to be replace with valid one.
+// Represents single shopping item. Temporary message to be replace with valid
+// one.
 message ShoppingItem {
+  int64 id = 1;
+
   // Name of this shopping item.
-  string name = 1;
+  string name = 2;
 
   // Quantity of this shopping item.
-  int32 quantity = 2;
+  float quantity = 3;
 
-  // Measurement values
-  enum Measurement {
+  // Available measure units
+  enum MeasureUnit {
     // Pieces of item.
     PIECES = 0;
 
@@ -27,24 +30,44 @@ message ShoppingItem {
 
     // Liters of item.
     LITERS = 3;
+
+    // NextId = 4;
   }
 
-  // Measurement of this shopping item.
-  Measurement measurement = 3;
+  // Measure unit of this shopping item.
+  MeasureUnit measure_unit = 4;
 
-  // NextId = 4;
+  int64 product_id = 5;
+
+  // NextId = 6;
 }
 
-// Represents shipping list. Temporary message to be replace with valid one.
+// Represents shopping list.
 message ShoppingList {
+  int64 id = 1;
+
   // Name of the shopping list.
-  string name = 1;
+  string name = 2;
 
   // Owner id of the shopping list.
-  int64 owner_id = 2;
+  int64 owner_id = 3;
 
   // Items in this shopping list.
-  repeated ShoppingItem shopping_items = 3;
+  repeated ShoppingItem shopping_items = 4;
 
-  // NextId = 4;
+  enum Status {
+    NOT_READY = 0;
+    READY = 1;
+    ORDERED = 2;
+    OPTIMIZED = 3;
+
+    // NextId = 5;
+  }
+
+  // Status of the shopping list
+  Status status = 5;
+
+  int64 creation_time_ms = 6;
+
+  // NextId = 7;
 }
