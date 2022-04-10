@@ -5,11 +5,15 @@ package com.github.rush.services.shopping;
 option java_multiple_files = true;
 option java_package = "com.github.rush.services.shopping";
 
+import "com/github/rush/model/shopping.proto";
+
 // Service providing rpcs to order/sort shopping list.
 service ShoppingListService {
 
   rpc CreateShoppingList(CreateShoppingListRequest)
       returns (CreateShoppingListResponse);
+
+  rpc AddShoppingItem(AddShoppingItemRequest) returns (AddShoppingItemResponse);
 }
 
 message CreateShoppingListRequest {
@@ -25,3 +29,15 @@ message CreateShoppingListResponse {
 
   // NextId = 2;
 }
+
+message AddShoppingItemRequest {
+  // Id of shopinng list to which item will be added.
+  int64 list_id = 1;
+
+  // Item which is
+  com.github.rush.model.shopping.ShoppingItem item = 2;
+
+  // NextId = 3;
+}
+
+message AddShoppingItemResponse {}
