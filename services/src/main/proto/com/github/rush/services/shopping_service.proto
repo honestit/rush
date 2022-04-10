@@ -14,6 +14,9 @@ service ShoppingListService {
       returns (CreateShoppingListResponse);
 
   rpc AddShoppingItem(AddShoppingItemRequest) returns (AddShoppingItemResponse);
+
+  rpc UpdateShoppingList(UpdateShoppingListRequest)
+      returns (UpdateShoppingLisResponse);
 }
 
 message CreateShoppingListRequest {
@@ -34,10 +37,22 @@ message AddShoppingItemRequest {
   // Id of shopinng list to which item will be added.
   int64 list_id = 1;
 
-  // Item which is
+  // Item to add.
   com.github.rush.model.shopping.ShoppingItem item = 2;
 
   // NextId = 3;
 }
 
 message AddShoppingItemResponse {}
+
+message UpdateShoppingListRequest {
+  // Id of shopinng list.
+  int64 list_id = 1;
+
+  // New status of shopping list.
+  com.github.rush.model.shopping.ShoppingList.Status status = 2;
+
+  // NeextId = 3;
+}
+
+message UpdateShoppingLisResponse {}
