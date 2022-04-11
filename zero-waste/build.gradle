@@ -5,6 +5,8 @@ plugins {
 dependencies {
     implementation project(':model')
     implementation project(':services')
+
+    testImplementation("io.grpc:grpc-testing:${libs.versions.grpc.get()}")
 }
 
 tasks.named('test') {
