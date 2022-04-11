@@ -1,8 +1,13 @@
 plugins {
-    id 'rush.java-library-conventions'
+    id 'rush.spring-service-conventions'
 }
 
 dependencies {
-  implementation project(':model')
-  implementation project(':services')
+
+    implementation project(':model')
+    implementation project(':services')
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
 }

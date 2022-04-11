@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.github.rush.services.products;
+
+option java_multiple_files = true;
+option java_package = "com.github.rush.services.products";
+
+import "com/github/rush/model/product.proto";
+
+// Service providing rpcs to find product.
+service ProductsService {
+  rpc FindProduct(ProductRequest) returns (ProductResponse);
+}
+
+message ProductRequest {
+  int64 id = 1;
+
+  // NextId = 2;
+}
+
+message ProductResponse {
+  com.github.rush.model.product.Product product = 1;
+
+  // NextId = 2;
+}
