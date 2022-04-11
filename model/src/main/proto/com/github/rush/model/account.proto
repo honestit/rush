@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.github.rush.model.account;
+
+option java_multiple_files = true;
+option java_package = "com.github.rush.model.account";
+option java_outer_classname = "AccountApi";
+
+// Represents Account. Temporary message to be replace with valid one.
+message Account {
+  // Id of an account.
+  int64 id = 1;
+
+  // Username for an account.
+  string username = 2;
+
+  // E-mail address connected to account.
+  string email = 3;
+
+  // NextId = 4;
+}
+

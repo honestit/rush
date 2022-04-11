@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package com.github.rush.services.account;
+
+option java_multiple_files = true;
+option java_package = "com.github.rush.services.account";
+
+import "com/github/rush/model/account.proto";
+
+// Service providing rpcs for account operations.
+service AccountService {
+
+  rpc VerifyAccount(VerifyAccountRequest) returns (VerifyAccountResponse);
+
+}
+
+message VerifyAccountRequest {
+  // Account to verify.
+  com.github.rush.model.account.Account account = 1;
+
+  // NextId = 2;
+}
+
+message VerifyAccountResponse {
+
+  // Result of verifying account.
+  bool verify_result = 1;
+
+  // NextId = 2;
+}
