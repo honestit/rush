@@ -11,10 +11,9 @@ service ProductsService {
 }
 
 message ProductRequest {
-  int32 id = 1;
-  string name = 2;
+  int64 id = 1;
 
-  // NextId = 3;
+  // NextId = 2;
 }
 
 message ProductResponse {
