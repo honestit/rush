@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package com.github.rush.model.zerowaste;
+
+option java_multiple_files = true;
+option java_package = "com.github.rush.model.zerowaste";
+// All messages available through outer class, ex. ZeroWastegApi.Suggestion.
+option java_outer_classname = "ZeroWastegApi";
+
+// Represents grouped records of ChangeSuggestion.
+message ChangeSuggestions {
+  // List of available suggestions.
+  repeated Suggestion change_suggestions = 1;
+
+  // NextId = 2;
+}
+
+// Represents single zero waste suggestion.
+message Suggestion {
+  // Item ID in shopping list.
+  int64 item_id = 1;
+
+  // ID of the product.
+  int64 product_id = 2;
+
+  // Previous amount.
+  float amount_original = 3;
+
+  // Suggested amount.
+  float amount_changed = 4;
+
+  // Suggestion reason.
+  string reason = 5;
+
+  // NextId = 6
+}

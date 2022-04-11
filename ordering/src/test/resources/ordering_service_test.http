@@ -1,0 +1,4 @@
+# https://blog.jetbrains.com/idea/2021/10/intellij-idea-2021-3-eap-6-enhanced-http-client-kotlin-support-for-cdi-and-more/
+
+## GetOrderedShoppingList rpc with empty request message.
+GRPC -plaintext -d "{}" localhost:9090/com.github.rush.services.shopping.OrderingService.GetOrderedShoppingList
