@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -23,6 +24,7 @@ public class GetOrderedShoppingListProviderImpl implements GetOrderedShoppingLis
   private final ShopRepository shopRepository;
 
   @Override
+  @Transactional
   public GetOrderedShoppingListResponse getOrderedShoppingList(
       GetOrderedShoppingListRequest request) {
     GetOrderedShoppingListResponse.Builder responseBuilder =
@@ -68,12 +70,19 @@ public class GetOrderedShoppingListProviderImpl implements GetOrderedShoppingLis
     // Build map of products ordering
     Map<ShopEntity, Map<String, Integer>> orderingMap =
         shopForItemsMap.entrySet().stream()
+            .peek(entry -> log.debug("Entry for products ordering: {}", entry))
             .filter(entry -> !entry.getValue().isEmpty())
             .collect(
                 Collectors.toMap(
                     Map.Entry::getKey,
                     entry ->
                         entry.getKey().getProductOrderings().stream()
+                            .peek(
+                                productOrdering ->
+                                    log.debug(
+                                        "Product ordering {} for shop {}",
+                                        productOrdering,
+                                        entry.getKey()))
                             .collect(
                                 Collectors.toMap(
                                     ProductOrdering::getName,
