@@ -15,10 +15,10 @@ message Group {
   string name = 1;
 
   // List of available shops to collect all records from the group.
-  repeated Shop shop = 2;
+  Shop shop = 2;
 
   // List of records with ordered shopping items.
-  repeated Record records = 3;
+  repeated Record record = 3;
 
   // NextId = 4;
 }

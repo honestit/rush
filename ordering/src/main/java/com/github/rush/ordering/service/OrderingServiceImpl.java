@@ -1,6 +1,6 @@
 package com.github.rush.ordering.service;
 
-import com.github.rush.ordering.service.rpc.GetOrderedShoppingListProvider;
+import com.github.rush.ordering.service.rpc.getorderedshoppinglist.GetOrderedShoppingListProvider;
 import com.github.rush.services.ordering.GetOrderedShoppingListRequest;
 import com.github.rush.services.ordering.GetOrderedShoppingListResponse;
 import com.github.rush.services.ordering.OrderingServiceGrpc;
