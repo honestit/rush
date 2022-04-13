@@ -19,6 +19,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
 
     testImplementation 'com.google.truth.extensions:truth-proto-extension:1.1.3'
+    testImplementation("io.grpc:grpc-testing:${libs.versions.grpc.get()}")
 }
 
 tasks.named('test') {
