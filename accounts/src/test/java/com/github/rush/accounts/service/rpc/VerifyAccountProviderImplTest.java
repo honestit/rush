@@ -20,7 +20,6 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class VerifyAccountProviderImplTest {
 
-    private final static long PRODUCT_ID = 123L;
     private final static String USERNAME = "RushUser";
     @Mock
     private AccountRepository accountRepository;

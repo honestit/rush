@@ -8,10 +8,10 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "accounts")
-@Getter
-@Setter
+@Getter @Setter
 @ToString
 @Builder @NoArgsConstructor @AllArgsConstructor
+@EqualsAndHashCode
 public class AccountEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
