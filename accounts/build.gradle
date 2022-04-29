@@ -2,6 +2,12 @@ plugins {
     id 'rush.spring-service-conventions'
 }
 
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
 dependencies {
     implementation project(':model')
     implementation project(':services')

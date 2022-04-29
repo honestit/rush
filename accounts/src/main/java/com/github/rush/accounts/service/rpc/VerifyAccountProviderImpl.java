@@ -21,10 +21,9 @@ public class VerifyAccountProviderImpl implements VerifyAccountProvider {
             log.debug("No account in VerifyAccountRequest");
             return VerifyAccountResponse.getDefaultInstance();
         }
-
+        accountRepository.findByUsername(account.getUsername());
         return VerifyAccountResponse.newBuilder()
-                .setVerifyResult(
-                        accountRepository.verifyAccount(account))
+                .setVerifyResult(accountRepository.findByUsername(account.getUsername()).isPresent())
                 .build();
     }
 }
