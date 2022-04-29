@@ -1,12 +1,30 @@
 package com.github.rush.accounts.service.rpc;
 
+import com.github.rush.model.account.Account;
 import com.github.rush.services.account.VerifyAccountRequest;
 import com.github.rush.services.account.VerifyAccountResponse;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
-public class VerifyAccountProviderImpl implements VerifyAccountProvider{
+@Service
+@Slf4j
+@RequiredArgsConstructor
+public class VerifyAccountProviderImpl implements VerifyAccountProvider {
+
+    private final AccountRepository accountRepository;
 
     @Override
     public VerifyAccountResponse verifyAccount(VerifyAccountRequest request) {
-        return VerifyAccountResponse.getDefaultInstance();
+        Account account = request.getAccount();
+        if (request.getAccount() == null) {
+            log.debug("No account in VerifyAccountRequest");
+            return VerifyAccountResponse.getDefaultInstance();
+        }
+
+        return VerifyAccountResponse.newBuilder()
+                .setVerifyResult(
+                        accountRepository.verifyAccount(account))
+                .build();
     }
 }
