@@ -53,7 +53,7 @@ public class AccountsServiceImplTest {
 
     @DisplayName("- should return true for account verification")
     @Test
-    public void shouldReturnProduct() throws Exception {
+    public void shouldReturnAccount() throws Exception {
         VerifyAccountRequest request = VerifyAccountRequest.newBuilder()
                 .setAccount(Account.newBuilder()
                         .setId(123L).build())
