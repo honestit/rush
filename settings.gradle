@@ -24,7 +24,7 @@ dependencyResolutionManagement {
             library('protobuf-java-util', 'com.google.protobuf', 'protobuf-java-util').versionRef('protobuf')
             // spring
             library('spring-boot-starter', 'org.springframework.boot', 'spring-boot-starter').withoutVersion()
-            library('spring-boot-starter-grpc', 'net.devh', 'grpc-server-spring-boot-starter').versionRef('spring-boot-starter-grpc')
+            library('spring-boot-starter-grpc', 'net.devh', 'grpc-spring-boot-starter').versionRef('spring-boot-starter-grpc')
             library('spring-boot-starter-test', 'org.springframework.boot', 'spring-boot-starter-test').withoutVersion()
 
 
