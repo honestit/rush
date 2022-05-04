@@ -11,6 +11,5 @@ public class ProductsServerApplicationTest {
     @Test
     @DisplayName("- should start")
     public void startupTest() {
-
     }
 }

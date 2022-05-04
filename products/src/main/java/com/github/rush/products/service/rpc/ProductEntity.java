@@ -38,7 +38,12 @@ public class ProductEntity {
     @Builder.Default
     private List<String> categories = new ArrayList<>();
 
-//    private Map<Integer, String> attribute = new ArrayList<>();
+    @Override
+    public boolean equals(Object o){
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-
+        ProductEntity that = (ProductEntity) o;
+        return Objects.equals(id, that.id);
+    }
 }

@@ -2,6 +2,8 @@ package com.github.rush.products.service.rpc;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
-    ProductEntity findProduct(long id);
+    Optional<ProductEntity> findById(long id);
 }

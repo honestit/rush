@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -16,15 +18,14 @@ public class FindProductProviderImpl implements FindProductProvider {
 
     @Override
     public ProductResponse findProduct(ProductRequest productRequest) {
-        ProductEntity productEntity = productRepository.findProduct(productRequest.getId());
-        if (productEntity == null) {
+        Optional<ProductEntity> productEntityOpt = productRepository.findById(productRequest.getId());
+        if (productEntityOpt.isEmpty()) {
             return ProductResponse.getDefaultInstance();
         }
-
+        ProductEntity productEntity = productEntityOpt.get();
         Product product = Product.newBuilder().setText(productEntity.getText())
                 .setName(productEntity.getName())
                 .build();
-
         return ProductResponse.newBuilder().setProduct(product).build();
     }
 }

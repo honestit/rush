@@ -25,9 +25,11 @@ import static org.mockito.Mockito.when;
 @Import(ProductsServiceImpl.class)
 public class ProductsServiceImplTest {
 
-    @MockBean private FindProductProvider findProductProvider;
+    @MockBean
+    private FindProductProvider findProductProvider;
 
-    @Autowired private ProductsServiceImpl productsService;
+    @Autowired
+    private ProductsServiceImpl productsService;
 
     @DisplayName("- should return no product was found")
     @Test
@@ -52,7 +54,6 @@ public class ProductsServiceImplTest {
     @Test
     public void shouldReturnProduct() throws Exception {
         ProductRequest request = ProductRequest.newBuilder().setId(123L).build();
-
         when(findProductProvider.findProduct(request))
                 .thenReturn(
                         ProductResponse.newBuilder()
@@ -66,10 +67,9 @@ public class ProductsServiceImplTest {
                                         .addCategories("meat").addCategories("other").build()
                                 ).build()
                 );
-
         StreamRecorder<ProductResponse> responseObserver = StreamRecorder.create();
-        productsService.findProduct(request, responseObserver);
 
+        productsService.findProduct(request, responseObserver);
         if (!responseObserver.awaitCompletion(5, TimeUnit.SECONDS)) {
             fail("The call did not terminate in time");
         }

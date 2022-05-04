@@ -10,6 +10,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Optional;
+
 import static com.google.common.truth.extensions.proto.ProtoTruth.assertThat;
 import static org.mockito.Mockito.when;
 
@@ -29,15 +31,13 @@ class FindProductProviderImplTest {
     @Test
     public void shouldReturnProduct() {
         ProductRequest request = ProductRequest.newBuilder().setId(PRODUCT_ID).build();
-
         ProductResponse expectedResponse = ProductResponse.newBuilder().setProduct(Product.newBuilder().setText("text1").setName("name1").build()).build();
-
-        when(productRepository.findProduct(PRODUCT_ID)).thenReturn(ProductEntity.builder().text("text1").name("name1").build());
+        ProductEntity productEntity = ProductEntity.builder().text("text1").name("name1").build();
+        when(productRepository.findById(PRODUCT_ID)).thenReturn(java.util.Optional.ofNullable(productEntity));
 
         ProductResponse response = classUnderTest.findProduct(request);
 
         assertThat(response).isEqualTo(expectedResponse);
-
     }
 
 
@@ -45,13 +45,10 @@ class FindProductProviderImplTest {
     @Test
     public void shouldNotReturnProductBecauseNotFound() {
         ProductRequest request = ProductRequest.newBuilder().setId(PRODUCT_ID).build();
-
-        when(productRepository.findProduct(PRODUCT_ID)).thenReturn(null);
+        when(productRepository.findById(PRODUCT_ID)).thenReturn(Optional.empty());
 
         ProductResponse response = classUnderTest.findProduct(request);
 
         assertThat(response).isEqualToDefaultInstance();
     }
-
-
 }
