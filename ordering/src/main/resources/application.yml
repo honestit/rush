@@ -1,7 +1,14 @@
 spring:
+  cloud:
+    config:
+      uri: localhost:8888
+  config:
+    import: optional:configserver:http://localhost:8888
   jpa:
     hibernate:
       ddl-auto: update
+  application:
+    name: ordering
 logging:
   level:
     com.github.rush: debug
