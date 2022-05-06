@@ -1,6 +1,6 @@
 rootProject.name = 'rush'
 
-include('model', 'services', 'shopping', 'products', 'ordering', 'zero-waste', 'accounts', 'qa', 'config-server')
+include('model', 'services', 'shopping', 'products', 'ordering', 'zero-waste', 'accounts', 'qa', 'config-server', 'discovery-server')
 
 dependencyResolutionManagement {
     versionCatalogs {
