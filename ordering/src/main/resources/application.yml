@@ -12,3 +12,11 @@ spring:
 logging:
   level:
     com.github.rush: debug
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:9999/eureka

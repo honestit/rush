@@ -16,3 +16,4 @@ eureka:
       defaultZone: http://localhost:9999/eureka
   instance:
     hostname: localhost
+    prefer-ip-address: true
