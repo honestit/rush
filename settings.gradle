@@ -34,4 +34,5 @@ dependencyResolutionManagement {
         }
     }
 }
+include 'config-server'
 
