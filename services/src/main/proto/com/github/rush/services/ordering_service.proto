@@ -28,7 +28,7 @@ message GetOrderedShoppingListRequest {
 message GetOrderedShoppingListResponse {
   // Groups of ordered records.
   // Each group is based on items categories or/and shop to collect them from.
-  repeated com.github.rush.model.ordering.Group groups = 1;
+  repeated com.github.rush.model.ordering.Group group = 1;
 
   // NextId = 2;
 }
