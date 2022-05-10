@@ -20,3 +20,9 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://localhost:9999/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,beans
