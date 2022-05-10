@@ -8,10 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class OrderingServerApplicationTest {
 
-    @Test
-    @DisplayName("- should start")
-    public void startupTest() {
-
-    }
-
+  @Test
+  @DisplayName("- should start")
+  public void startupTest() {}
 }

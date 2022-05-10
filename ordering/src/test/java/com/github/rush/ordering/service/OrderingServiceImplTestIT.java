@@ -13,6 +13,8 @@ import net.devh.boot.grpc.client.autoconfigure.GrpcClientAutoConfiguration;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import net.devh.boot.grpc.server.autoconfigure.GrpcServerAutoConfiguration;
 import net.devh.boot.grpc.server.autoconfigure.GrpcServerFactoryAutoConfiguration;
+import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -54,9 +56,10 @@ class OrderingServiceImplTestIT {
       ProtoTruth.assertThat(response).isEqualToDefaultInstance();
     }
 
+    @Disabled
     @DisplayName("- should return grouped shopping items")
-    @Test
     @Sql(scripts = "classpath:scripts/sql/create_shops_with_product_ordering.sql")
+    @Test
     public void shouldReturnGroupedShoppingItems() {
       GetOrderedShoppingListResponse response =
           stub.getOrderedShoppingList(GetOrderedShoppingListRequest.newBuilder()
