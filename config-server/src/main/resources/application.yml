@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/honestit/rush
+          search-paths: 'config-server/configs'
+          default-label: feature/config-and-discovery
+server:
+  port: 8888
+grpc:
+  server:
+    port: 0

@@ -1,8 +1,25 @@
 plugins {
-    id 'rush.java-library-conventions'
+    id 'rush.spring-service-conventions'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
 }
 
 dependencies {
-  implementation project(':model')
-  implementation project(':services')
+
+    implementation project(':model')
+    implementation project(':services')
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
 }

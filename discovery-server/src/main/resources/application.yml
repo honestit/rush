@@ -1,0 +1,19 @@
+server:
+  port: 9999
+grpc:
+  server:
+    port: -1
+spring:
+  application:
+    name: discovery-server
+eureka:
+  server:
+    enable-self-preservation: false
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:9999/eureka
+  instance:
+    hostname: localhost
+    prefer-ip-address: true

@@ -1,7 +1,11 @@
 plugins {
     id 'rush.java-common-conventions'
     id 'org.springframework.boot'
-    id 'io.spring.dependency-management' 
+    id 'io.spring.dependency-management'
+}
+
+ext {
+    set('springCloudVersion', "2021.0.2")
 }
 
 dependencies {
@@ -9,4 +13,10 @@ dependencies {
     implementation libs.spring.boot.starter.grpc
     
     testImplementation libs.spring.boot.starter.test
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }
