@@ -1,0 +1,25 @@
+spring:
+  cloud:
+    discovery:
+      enabled: false
+    config:
+      discovery:
+        enabled: false
+      enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+  application:
+    name: ordering
+logging:
+  level:
+    com.github.rush: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+grpc:
+  server:
+    port: -1
